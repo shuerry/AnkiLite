@@ -22,4 +22,8 @@ public class Question {
   public void setDifficulty(Difficulty difficulty) {
     this.difficulty = difficulty;
   }
+
+  public String toString() {
+    return this.difficulty + "- " + "Q: " + this.question + " A: " + this.answer;
+  }
 }
