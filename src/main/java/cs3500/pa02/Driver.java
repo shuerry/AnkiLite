@@ -54,5 +54,9 @@ public class Driver {
     String questionBank = "/Users/sherrychen/Downloads/CS3500/pa02-shuerry/" +
         "src/test/resources/output/QuestionBank.txt";
     qw.writeQuestionBank(questionBank);
+
+    QuestionBank qb = new QuestionBank(Path.of(questionBank));
+    qb.getQuestions();
+    System.out.println(qb.getHard());
   }
 }
