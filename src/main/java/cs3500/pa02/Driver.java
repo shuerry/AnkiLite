@@ -49,5 +49,10 @@ public class Driver {
     // write the summarized content to the output path
     SgWriter fw = new SgWriter(mdList.getList());
     fw.writeSg(output, orderingFlag);
+
+    QuestionWriter qw = new QuestionWriter(mdList.getList());
+    String questionBank = "/Users/sherrychen/Downloads/CS3500/pa02-shuerry/" +
+        "src/test/resources/output/QuestionBank.txt";
+    qw.writeQuestionBank(questionBank);
   }
 }

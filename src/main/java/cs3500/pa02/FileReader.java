@@ -32,6 +32,7 @@ public class FileReader {
    * a StringBuilder store summarized and formatted content
    */
   StringBuilder sb = new StringBuilder();
+  StringBuilder allQuestions = new StringBuilder();
 
   /**
    * constructor for the class MdReader
@@ -71,6 +72,23 @@ public class FileReader {
   }
 
   /**
+   * get all the questions in the markdown file with appropriate formatting
+   *
+   * @return the questions and answer block of the markdown file
+   */
+  public StringBuilder allQuestions() {
+    this.getQuestions();
+    if (questions.size() != 0) {
+      for (Question qa : questions) {
+        allQuestions.append(qa.toString());
+      }
+    } else {
+      allQuestions.append("");
+    }
+    return allQuestions;
+  }
+
+  /**
    * extract the Q&A blocks in the markdown file with appropriate formatting
    *
    * @return the Q&A content from the markdown file
@@ -78,10 +96,12 @@ public class FileReader {
   public ArrayList<Question> getQuestions() {
     this.format();
     for (String s : formattedContent) {
+      if (s.contains(":::")) {
         String question = s.substring(2, s.indexOf(":::"));
         String answer = s.substring(s.indexOf(":::") + 3, s.length());
         questions.add(new Question(question, answer, Difficulty.HARD));
       }
+    }
     return questions;
   }
 

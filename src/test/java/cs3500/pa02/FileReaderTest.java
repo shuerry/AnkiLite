@@ -47,7 +47,7 @@ class FileReaderTest {
    *
    */
   @Test
-  void testGetQuestions() throws IOException {
+  void testAllQuestions() throws IOException {
     FileReader fr = new FileReader(Path.of("src/test/resources/input/Q&A.md"));
     ArrayList<Question> expectedQuestions = new ArrayList<>();
     ArrayList<String> expected =
