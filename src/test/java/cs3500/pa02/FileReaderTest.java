@@ -16,12 +16,12 @@ import org.junit.jupiter.api.Test;
 /**
  * represents the class to test the MdReader class
  */
-class MdReaderTest {
+class FileReaderTest {
   /**
    * input directory
    */
   private final String input = "src/test/resources/input/arrays.md";
-  MdReader mr;
+  FileReader mr;
 
 
   /**
@@ -29,7 +29,7 @@ class MdReaderTest {
    */
   @BeforeEach
   public void setup() throws IOException {
-    mr = new MdReader(Path.of(input));
+    mr = new FileReader(Path.of(input));
     assertNotNull(mr.scanner);
   }
 
@@ -39,7 +39,44 @@ class MdReaderTest {
   @Test
   public void throwException() {
     Path nonExistentPath = Path.of("non_existent_file.txt");
-    assertThrows(IOException.class, () -> new MdReader(nonExistentPath));
+    assertThrows(IOException.class, () -> new FileReader(nonExistentPath));
+  }
+
+  /**
+   * test to see if the questions are being extracted correctly
+   *
+   */
+  @Test
+  void testGetQuestions() throws IOException {
+    FileReader fr = new FileReader(Path.of("src/test/resources/input/Q&A.md"));
+    ArrayList<Question> expectedQuestions = new ArrayList<>();
+    ArrayList<String> expected =
+        (ArrayList<String>) Files.readAllLines(Path.of("src/test/resources/input/Q&A.md"));
+    ArrayList<String> expectedFormatted = new ArrayList<>();
+    for (String s : expected) {
+      if (s.contains("[[")) {
+        StringBuilder merge = new StringBuilder();
+        Pattern pattern = Pattern.compile("\\[\\[(.*?)\\]\\]");
+        if (s.endsWith("]]") || s.endsWith("]].")) {
+          merge.append(s);
+        }
+        if (!s.endsWith("]]") && !s.endsWith("]].")) {
+          merge.append(s);
+          merge.append(expected.get(expected.indexOf(s) + 1).substring(1));
+        }
+        Matcher matcher = pattern.matcher(merge);
+        while (matcher.find()) {
+          String extractedPhrase = matcher.group(1);
+          expectedFormatted.add("- " + extractedPhrase + "\n");
+        }
+      }
+    }
+    for (String s: expectedFormatted) {
+      String question = s.substring(2, s.indexOf(":::"));
+      String answer = s.substring(s.indexOf(":::") + 3, s.length());
+      expectedQuestions.add(new Question(question, answer, Difficulty.HARD));
+    }
+    assertEquals(expectedQuestions.size(), fr.getQuestions().size());
   }
 
   /**
@@ -48,13 +85,12 @@ class MdReaderTest {
    * test if summarize() is working correctly
    */
   @Test
-  void summarize() throws IOException {
+  void testSummarize() throws IOException {
     // calls the method
     mr.summarize();
     // add all lines from the arrays.md to the expectedList
     ArrayList<String> expected =
         (ArrayList<String>) Files.readAllLines(Path.of(input));
-    expected.remove(expected.size() - 1);
 
     // check to see if the expected content is the same as content retrieved from the MdReader
     assertEquals(expected, mr.content);

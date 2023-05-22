@@ -10,7 +10,7 @@ import java.util.regex.Pattern;
 /**
  * Represents a MdReader class for reading and summarizing texts in a markdown file
  */
-public class MdReader {
+public class FileReader {
   Scanner scanner = null;
 
   /**
@@ -24,6 +24,11 @@ public class MdReader {
   ArrayList<String> formattedContent = new ArrayList<>();
 
   /**
+   * an ArrayList to store the Q&A blocks in the file
+   */
+  ArrayList<Question> questions = new ArrayList<>();
+
+  /**
    * a StringBuilder store summarized and formatted content
    */
   StringBuilder sb = new StringBuilder();
@@ -34,7 +39,7 @@ public class MdReader {
    * @param p Path of the input directory
    * @throws IOException if scanner cannot be initialized properly
    */
-  MdReader(Path p) throws IOException {
+  FileReader(Path p) throws IOException {
     try {
       scanner = new Scanner(p);
     } catch (IOException e) {
@@ -49,6 +54,13 @@ public class MdReader {
    */
   public StringBuilder summarize() {
     this.format();
+    ArrayList<String> removedQst = new ArrayList<>(formattedContent);
+    for (String s : formattedContent) {
+      if (s.contains(":::")) {
+        removedQst.remove(s);
+      }
+    }
+    formattedContent = removedQst;
     for (String s : formattedContent) {
       if (s.contains("#")) {
         s += "\n";
@@ -56,6 +68,21 @@ public class MdReader {
       sb.append(s);
     }
     return sb;
+  }
+
+  /**
+   * extract the Q&A blocks in the markdown file with appropriate formatting
+   *
+   * @return the Q&A content from the markdown file
+   */
+  public ArrayList<Question> getQuestions() {
+    this.format();
+    for (String s : formattedContent) {
+        String question = s.substring(2, s.indexOf(":::"));
+        String answer = s.substring(s.indexOf(":::") + 3, s.length());
+        questions.add(new Question(question, answer, Difficulty.HARD));
+      }
+    return questions;
   }
 
   /**

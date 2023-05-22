@@ -1,3 +1,4 @@
+
 # Java Arrays
 - An **array** is a collection of variables of the same type
 

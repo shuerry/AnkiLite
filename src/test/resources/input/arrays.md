@@ -18,4 +18,3 @@
 - [[numberOfElements must be a positive Integer.]]
 - [[Gotcha: Array size is not
   modifiable once instantiated.]]
-

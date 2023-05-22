@@ -30,6 +30,8 @@ class SgWriterTest {
   Path path1;
   Path path2;
 
+  Path path3;
+
   /**
    * initializes expectedList, actualList, sgw, and the paths before each tests
    */
@@ -37,9 +39,11 @@ class SgWriterTest {
   public void setup() throws IOException {
     path1 = Path.of(input + "/arrays.md");
     path2 = Path.of(input + "/vectorNotes/vectors.md");
+    path3 = Path.of(input + "/Q&A.md");
     MdFinder mdf = new MdFinder(actualList);
     Files.walkFileTree(Path.of(input), mdf);
     actualList = mdf.getList();
+    expectedList.add(path3);
     expectedList.add(path1);
     expectedList.add(path2);
     sgw = new SgWriter(actualList);
@@ -82,7 +86,7 @@ class SgWriterTest {
   @Test
   public void testGenerateContent() throws IOException {
     sgw.writeSg(output, "filename");
-    String expectedText = "# Java Arrays\n"
+    String expectedText = "\n# Java Arrays\n"
         +
         "- An **array** is a collection of variables of the same type\n"
         +

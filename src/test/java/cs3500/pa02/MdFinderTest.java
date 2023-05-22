@@ -50,7 +50,7 @@ class MdFinderTest {
     ArrayList<Path> actualFiles = mdf.getList();
 
     // compare both lists
-    assertEquals(2, actualFiles.size());
+    assertEquals(3, actualFiles.size());
   }
 
 

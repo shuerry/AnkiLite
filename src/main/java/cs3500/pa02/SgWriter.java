@@ -118,7 +118,7 @@ public class SgWriter {
   private String generateContent() throws IOException {
     sortFiles();
     for (Path p : mdFiles) {
-      MdReader fr = new MdReader(p);
+      FileReader fr = new FileReader(p);
       summarizedText = summarizedText + fr.summarize() + "\n";
     }
     return summarizedText;
