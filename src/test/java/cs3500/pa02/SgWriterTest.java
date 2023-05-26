@@ -76,7 +76,7 @@ class SgWriterTest {
    * test if IOException is thrown when the OrderingFlag is invalid
    */
   @Test
-  public void testAssignFlagInvalidInput() throws IOException {
+  public void testAssignFlagInvalidInput() {
     assertThrows(IOException.class, () -> sgw.writeSg(output, "invalid"));
   }
 

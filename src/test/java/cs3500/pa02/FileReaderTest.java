@@ -44,39 +44,21 @@ class FileReaderTest {
 
   /**
    * test to see if the questions are being extracted correctly
+   * the SampleForTesting.txt has the same Q&A blocks in Q&A.md
    *
    */
   @Test
   void testAllQuestions() throws IOException {
     FileReader fr = new FileReader(Path.of("src/test/resources/input/Q&A.md"));
-    ArrayList<Question> expectedQuestions = new ArrayList<>();
     ArrayList<String> expected =
-        (ArrayList<String>) Files.readAllLines(Path.of("src/test/resources/input/Q&A.md"));
-    ArrayList<String> expectedFormatted = new ArrayList<>();
+        (ArrayList<String>) Files.readAllLines(
+            Path.of("/Users/sherrychen/Downloads/CS3500/pa02-shuerry"
+                + "/src/test/resources/SampleForTesting.txt"));
+    StringBuilder expectedContent = new StringBuilder();
     for (String s : expected) {
-      if (s.contains("[[")) {
-        StringBuilder merge = new StringBuilder();
-        Pattern pattern = Pattern.compile("\\[\\[(.*?)\\]\\]");
-        if (s.endsWith("]]") || s.endsWith("]].")) {
-          merge.append(s);
-        }
-        if (!s.endsWith("]]") && !s.endsWith("]].")) {
-          merge.append(s);
-          merge.append(expected.get(expected.indexOf(s) + 1).substring(1));
-        }
-        Matcher matcher = pattern.matcher(merge);
-        while (matcher.find()) {
-          String extractedPhrase = matcher.group(1);
-          expectedFormatted.add("- " + extractedPhrase + "\n");
-        }
-      }
+      expectedContent.append(s + "\n");
     }
-    for (String s: expectedFormatted) {
-      String question = s.substring(2, s.indexOf(":::"));
-      String answer = s.substring(s.indexOf(":::") + 3, s.length());
-      expectedQuestions.add(new Question(question, answer, Difficulty.HARD));
-    }
-    assertEquals(expectedQuestions.size(), fr.getQuestions().size());
+    assertEquals(expectedContent.toString(), fr.allQuestions().toString());
   }
 
   /**

@@ -24,6 +24,3 @@ HARD- Q: Which country is known as the Land of the Midnight Sun? A: Norway.
 HARD- Q: What is the largest lake in North America?  A:  The largest lake is Lake Superior.
 HARD- Q: Which country is famous for its fjords?  A:  Norway.
 HARD- Q: What is the capital of Mexico?  A:  The capital is Mexico City.
-
-
-

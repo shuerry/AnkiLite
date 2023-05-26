@@ -1,5 +1,7 @@
 package cs3500.pa02;
 
+import cs3500.pa02.model.Difficulty;
+import cs3500.pa02.model.Question;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.util.ArrayList;
@@ -49,7 +51,7 @@ public class FileReader {
   }
 
   /**
-   * summarize the content in the markdown file with appropriate formatting
+   * summarize the content in the markdown file with appropriate formatting and remove any Q&A
    *
    * @return the summarized and formatted content of the markdown file
    */
@@ -74,7 +76,7 @@ public class FileReader {
   /**
    * get all the questions in the markdown file with appropriate formatting
    *
-   * @return the questions and answer block of the markdown file
+   * @return the questions and answer blocks of the markdown file in the form of String
    */
   public StringBuilder allQuestions() {
     this.getQuestions();
@@ -91,9 +93,9 @@ public class FileReader {
   /**
    * extract the Q&A blocks in the markdown file with appropriate formatting
    *
-   * @return the Q&A content from the markdown file
+   * @return the Q&A content from the markdown file in the form of an ArrayList of Questions
    */
-  public ArrayList<Question> getQuestions() {
+  private ArrayList<Question> getQuestions() {
     this.format();
     for (String s : formattedContent) {
       if (s.contains(":::")) {

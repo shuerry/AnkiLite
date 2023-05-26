@@ -1,4 +1,3 @@
-
 # Java Arrays
 - An **array** is a collection of variables of the same type
 
@@ -21,4 +20,5 @@
 
 ## Adding an element to a vector
 - v.add(object of type);
+
 
