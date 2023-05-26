@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 /**
- * Represents a study guide writer that generates a study guide
+ * Represent a study guide writer that generates a study guide
  */
 public class SgWriter {
   /**

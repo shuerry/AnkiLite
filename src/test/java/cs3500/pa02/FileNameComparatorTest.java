@@ -7,7 +7,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 /**
- * represents the class to test the FileNameComparator class
+ * Represents the class to test the FileNameComparator class
  */
 class FileNameComparatorTest {
   /**

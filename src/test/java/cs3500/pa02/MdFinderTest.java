@@ -35,7 +35,7 @@ class MdFinderTest {
   }
 
   /**
-   * tests building a list of all valid Markdown paths in a directory
+   * Tests building a list of all valid Markdown paths in a directory
    */
   @Test
   public void testGetList() throws IOException {

@@ -47,7 +47,7 @@ class QuestionTest {
   }
 
   /**
-   * test to see if the whole question block is being written correctly
+   * test to see if the whole question block is being displayed correctly
    */
   @Test
   void testToString() {

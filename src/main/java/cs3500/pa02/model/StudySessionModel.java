@@ -12,9 +12,9 @@ import java.util.Scanner;
  * A StudySessionModel class that handles all the functionality
  */
 public class StudySessionModel {
-  // An ArrayList of Questions that store all the Questions changed to hard
+  // An ArrayList of Questions that stores all the Questions changed to hard
   ArrayList<Question> changeToHard = new ArrayList<>();
-  // An ArrayList of Questions that store all the Questions changed to easy
+  // An ArrayList of Questions that stores all the Questions changed to easy
   ArrayList<Question> changeToEasy = new ArrayList<>();
   // An ArrayList of Questions with all the hard questions after the session
   ArrayList<Question> updatedHard;

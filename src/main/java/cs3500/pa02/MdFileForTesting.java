@@ -3,7 +3,7 @@ package cs3500.pa02;
 import java.nio.file.attribute.FileTime;
 
 /**
- * Represents a mock markdown file for testing TimeComparator purpose
+ * Represents a mock markdown file for testing the TimeComparator purpose
  */
 public class MdFileForTesting {
   FileTime createdAt;

@@ -5,7 +5,7 @@ import java.nio.file.Path;
 import java.util.Scanner;
 
 /**
- * A StudySessionView class that is responsible for displaying messages for the user
+ * A StudySessionView class that is responsible for displaying messages for the user and take inputs
  */
 public class StudySessionView {
 

@@ -94,7 +94,7 @@ public class StudySessionViewTest {
   }
 
   /**
-   * Test if the line is shown correctly to the user
+   * Test if the line is being shown correctly to the user
    */
   @Test
   public void testShowLine() {

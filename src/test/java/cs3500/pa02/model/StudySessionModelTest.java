@@ -225,7 +225,7 @@ public class StudySessionModelTest {
   }
 
   /**
-   * Test to see if an exception is thrown when the user enters invalid choice
+   * Test to see if an exception is thrown when the user enters an invalid choice
    */
   @Test
   public void testInvalidChoice() {

@@ -76,7 +76,7 @@ public class FileReader {
   /**
    * get all the questions in the markdown file with appropriate formatting
    *
-   * @return the questions and answer blocks of the markdown file in the form of String
+   * @return the question and answer blocks of the markdown file in the form of String
    */
   public StringBuilder allQuestions() {
     this.getQuestions();

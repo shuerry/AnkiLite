@@ -4,7 +4,7 @@ import java.nio.file.Path;
 import java.util.Comparator;
 
 /**
- * Represents a Comparator that implements Comparator interface for file names
+ * Represents a Comparator that implements Comparator interface for file name
  */
 public class FileNameComparator implements Comparator<Path> {
   /**

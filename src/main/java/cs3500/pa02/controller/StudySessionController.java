@@ -21,7 +21,7 @@ public class StudySessionController {
   ArrayList<Question> easy;
   // Number of questions want to be reviewed in the study session
   int numOfQuestions;
-  // Path to the question bank
+  // A path to the question bank
   Path source;
   // A StudySessionModel
   StudySessionModel ssm = new StudySessionModel();

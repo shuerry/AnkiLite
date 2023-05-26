@@ -11,7 +11,7 @@ import org.junit.jupiter.api.Test;
 class DifficultyTest {
 
   /**
-   * check if the values in the Difficulty enum are being retrieved properly
+   * check if the values in the Difficulty are being retrieved properly
    */
   @Test
   void values() {

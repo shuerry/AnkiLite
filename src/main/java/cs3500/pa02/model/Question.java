@@ -43,7 +43,7 @@ public class Question {
   }
 
   /**
-   * Get the difficulty of this block
+   * Get the difficulty of the block
    *
    * @return the difficulty of the block
    */

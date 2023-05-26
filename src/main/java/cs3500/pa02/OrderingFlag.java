@@ -1,7 +1,7 @@
 package cs3500.pa02;
 
 /**
- * represents the types of ordering flag
+ * represent the types of ordering flag
  */
 public enum OrderingFlag {
   /**

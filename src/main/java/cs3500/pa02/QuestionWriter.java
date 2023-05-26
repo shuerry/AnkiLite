@@ -68,7 +68,7 @@ public class QuestionWriter {
   }
 
   /**
-   * update the bank with new questions
+   * Update the bank with new questions
    *
    * @param questions list of questions that need to be written in the bank
    * @param output output path of the question bank file that needs to be overwritten

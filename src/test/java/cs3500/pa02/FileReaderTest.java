@@ -43,7 +43,7 @@ class FileReaderTest {
   }
 
   /**
-   * test to see if the questions are being extracted correctly
+   * Test to see if the questions are being extracted correctly
    * the SampleForTesting.txt has the same Q&A blocks in Q&A.md
    *
    */

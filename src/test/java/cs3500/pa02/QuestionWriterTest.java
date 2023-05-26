@@ -35,7 +35,7 @@ class QuestionWriterTest {
   Path path3;
 
   /**
-   * initializes expectedList, actualList, sgw, and the paths
+   * Initializes expectedList, actualList, sgw, and the paths
    */
   @BeforeEach
   public void setup() throws IOException {

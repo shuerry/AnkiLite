@@ -9,11 +9,11 @@ import java.util.Scanner;
  * Represents a QuestionBank that has all the Q&A blocks for a review session
  */
 public class QuestionBank {
-  // An ArrayList to store all the questions
+  // An ArrayList that stores all the questions
   ArrayList<String> allQuestions = new ArrayList<>();
-  // An ArrayList to store all the hard questions
+  // An ArrayList that stores all the hard questions
   ArrayList<Question> hardQuestions = new ArrayList<>();
-  // An ArrayList to store all the easy questions
+  // An ArrayList that stores all the easy questions
   ArrayList<Question> easyQuestions = new ArrayList<>();
   // A scanner to read the Q&A blocks in the question bank
   Scanner scanner;

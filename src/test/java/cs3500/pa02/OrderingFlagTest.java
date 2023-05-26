@@ -11,7 +11,7 @@ import org.junit.jupiter.api.Test;
 class OrderingFlagTest {
 
   /**
-   * check if the values in the OrderingFlag enum are being retrieved properly
+   * Check if the values in the OrderingFlag enum are being retrieved properly
    */
   @Test
   void values() {

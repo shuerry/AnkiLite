@@ -21,7 +21,7 @@ public class DriverTest {
   }
 
   /**
-   * test to see if IOException is thrown when the given path is invalid
+   * Test to see if IOException is thrown when the given path is invalid
    */
   @Test
   public void testMainWithInvalidPath() {

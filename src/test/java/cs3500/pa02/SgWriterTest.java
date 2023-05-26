@@ -81,7 +81,7 @@ class SgWriterTest {
   }
 
   /**
-   * test to see if the content are being generated properly
+   * Test to see if the content are being generated properly
    */
   @Test
   public void testGenerateContent() throws IOException {

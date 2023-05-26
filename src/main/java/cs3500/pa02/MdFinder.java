@@ -11,7 +11,7 @@ import java.util.ArrayList;
 
 
 /**
- * Represents a MdFinder class which implements FileVisitor
+ * Represent a MdFinder class which implements FileVisitor
  */
 public class MdFinder implements FileVisitor<Path> {
 

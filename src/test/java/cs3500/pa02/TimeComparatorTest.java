@@ -8,7 +8,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 /**
- * represents the class to test the TimeComparator class
+ * Represents the class to test the TimeComparator class
  */
 class TimeComparatorTest {
   TimeComparator tc;

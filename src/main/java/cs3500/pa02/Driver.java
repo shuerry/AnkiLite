@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
- * This is the main driver of this project.
+ * This is the main driver of this project
  */
 public class Driver {
   /**

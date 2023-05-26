@@ -4,7 +4,7 @@ import java.nio.file.attribute.FileTime;
 import java.util.Comparator;
 
 /**
- * Represents a Comparator that implements Comparator interface for FileTime
+ * Represent a Comparator that implements Comparator interface for FileTime
  */
 public class TimeComparator implements Comparator<FileTime> {
   /**

@@ -62,7 +62,7 @@ class QuestionBankTest {
   /**
    * Test if the easy questions are being extracted correctly
    *
-   * @throws IOException if there's an issue when extracting the easy questions
+   * @throws IOException if there are any issues when extracting the easy questions
    */
   @Test
   public void testGetEasy() {
