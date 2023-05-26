@@ -28,7 +28,7 @@ class FileReaderTest {
    * initializes mr and check that the Scanner is properly initialized before each test
    */
   @BeforeEach
-  public void setup() throws IOException {
+  void setup() throws IOException {
     mr = new FileReader(Path.of(input));
     assertNotNull(mr.scanner);
   }
@@ -37,7 +37,7 @@ class FileReaderTest {
    * test to see if an IOException is thrown when the path is invalid
    */
   @Test
-  public void throwException() {
+  void throwException() {
     Path nonExistentPath = Path.of("non_existent_file.txt");
     assertThrows(IOException.class, () -> new FileReader(nonExistentPath));
   }

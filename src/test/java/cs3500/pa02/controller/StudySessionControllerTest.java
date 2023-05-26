@@ -25,7 +25,7 @@ class StudySessionControllerTest {
    * Initializes ssc
    */
   @BeforeEach
-  public void setUp() {
+  void setUp() {
     ssc = new StudySessionController();
   }
 
@@ -34,7 +34,7 @@ class StudySessionControllerTest {
    * and study session flow successfully
    */
   @Test
-  public void testGetStart() throws IOException {
+  void testGetStart() throws IOException {
     String input = "src/test/resources/output/TestingUpdate.txt"
         + "\n1\n1";
     ByteArrayInputStream inputStream = new ByteArrayInputStream(input.getBytes());

@@ -26,19 +26,19 @@ class QuestionWriterTest {
    * output
    */
   private final String output = "src/test/resources/output/testingQA.txt";
-  ArrayList<Path> expectedList = new ArrayList<>();
-  ArrayList<Path> actualList = new ArrayList<>();
-  QuestionWriter qw;
-  QuestionWriter qwe;
-  Path path1;
-  Path path2;
-  Path path3;
+  private ArrayList<Path> expectedList = new ArrayList<>();
+  private ArrayList<Path> actualList = new ArrayList<>();
+  private QuestionWriter qw;
+  private QuestionWriter qwe;
+  private Path path1;
+  private Path path2;
+  private Path path3;
 
   /**
    * Initializes expectedList, actualList, sgw, and the paths
    */
   @BeforeEach
-  public void setup() throws IOException {
+  void setup() throws IOException {
     path1 = Path.of(input + "/arrays.md");
     path2 = Path.of(input + "/vectorNotes/vectors.md");
     path3 = Path.of(input + "/Q&A.md");
@@ -56,7 +56,7 @@ class QuestionWriterTest {
    * test to see if the Q&A content are being generated properly
    */
   @Test
-  public void testGenerateContent() throws IOException {
+  void testGenerateContent() throws IOException {
     qw.writeQuestionBank(output);
     ArrayList<String> expected =
         (ArrayList<String>) Files.readAllLines(
@@ -75,7 +75,7 @@ class QuestionWriterTest {
    * and throw an IOException if the output path is invalid
    */
   @Test
-  public void testWriteQuestionBank() throws IOException {
+  void testWriteQuestionBank() throws IOException {
     Files.deleteIfExists(Path.of(output));
     qw.writeQuestionBank(output);
     assertTrue(Files.exists(Path.of(output)), "File does not exist");
@@ -87,7 +87,7 @@ class QuestionWriterTest {
    * and throw an IOException if the output path is not found
    */
   @Test
-  public void testUpdateBank() throws IOException {
+  void testUpdateBank() throws IOException {
     ArrayList<Question> updatedQuestions = new ArrayList<>();
     updatedQuestions.add(new Question("q1", "a1", Difficulty.EASY));
     updatedQuestions.add(new Question("q2", "a2", Difficulty.HARD));

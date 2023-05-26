@@ -16,13 +16,13 @@ import org.junit.jupiter.api.Test;
  */
 class QuestionBankTest {
   private final String input = "src/test/resources/SampleForTesting.txt";
-  QuestionBank qb;
+  private QuestionBank qb;
 
   /**
    * Initializes qb
    */
   @BeforeEach
-  public void setUp() {
+  void setUp() {
     try {
       qb = new QuestionBank(Path.of(input));
     } catch (IOException e) {
@@ -37,7 +37,7 @@ class QuestionBankTest {
    * @throws IOException if there's an issue when extracting the questions
    */
   @Test
-  public void testGetQuestions() throws IOException {
+  void testGetQuestions() throws IOException {
     ArrayList<String> expected =
         (ArrayList<String>) Files.readAllLines(
             Path.of(input));
@@ -50,7 +50,7 @@ class QuestionBankTest {
    * @throws IOException if there's an issue when extracting the hard questions
    */
   @Test
-  public void testGetHard() throws IOException {
+  void testGetHard() throws IOException {
     qb.getQuestions();
     ArrayList<String> expected =
         (ArrayList<String>) Files.readAllLines(
@@ -64,7 +64,7 @@ class QuestionBankTest {
    * @throws IOException if there are any issues when extracting the easy questions
    */
   @Test
-  public void testGetEasy() {
+  void testGetEasy() {
     qb.getQuestions();
     assertEquals(0, qb.getEasy().size());
   }
@@ -73,7 +73,7 @@ class QuestionBankTest {
    * test to see if an IOException is thrown when the path is invalid
    */
   @Test
-  public void throwException() {
+  void throwException() {
     Path nonExistentPath = Path.of("non_existent_file.txt");
     assertThrows(IOException.class, () -> new QuestionBank(nonExistentPath));
   }

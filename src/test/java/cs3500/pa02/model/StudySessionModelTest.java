@@ -41,7 +41,7 @@ public class StudySessionModelTest {
    * Initializes ssm, source, hard and easy questions, and the hard and easy lists
    */
   @BeforeEach
-  public void setUp() {
+  void setUp() {
     ssm = new StudySessionModel();
     source = Path.of("src/test/resources/output/TestingUpdate.txt");
     hard1 = new Question("A hard question",
@@ -60,7 +60,7 @@ public class StudySessionModelTest {
    * input number of questions is equal to the amount of hard questions
    */
   @Test
-  public void testGenerateRandomQuestionsWithNumberEqualsHard() {
+  void testGenerateRandomQuestionsWithNumberEqualsHard() {
     assertEquals(2,
         ssm.generateRandomQuestions(source, hard, easy, 2).size());
   }
@@ -70,7 +70,7 @@ public class StudySessionModelTest {
    * input number of questions is equal to the amount of all questions
    */
   @Test
-  public void testGenerateRandomQuestionsWithNumberEqualsAll() {
+  void testGenerateRandomQuestionsWithNumberEqualsAll() {
     assertEquals(3,
         ssm.generateRandomQuestions(source, hard, easy, 3).size());
   }
@@ -80,7 +80,7 @@ public class StudySessionModelTest {
    * input number of questions is less than the amount of hard questions
    */
   @Test
-  public void testGenerateRandomQuestionsWithNumberLessThanAll() {
+  void testGenerateRandomQuestionsWithNumberLessThanAll() {
     assertEquals(3,
         ssm.generateRandomQuestions(source, hard, easy, 5).size());
   }
@@ -92,7 +92,7 @@ public class StudySessionModelTest {
    * @throws IOException when there's issue generating the question
    */
   @Test
-  public void testUserChoices1AlreadyEasy() throws IOException {
+  void testUserChoices1AlreadyEasy() throws IOException {
     ssm.generateRandomQuestions(source, hard, easy, 3);
     String input = "1";
     ByteArrayInputStream inputStream = new ByteArrayInputStream(input.getBytes());
@@ -120,7 +120,7 @@ public class StudySessionModelTest {
    * @throws IOException when there's issue generating the question
    */
   @Test
-  public void testUserChoices1() throws IOException {
+  void testUserChoices1() throws IOException {
     ssm.generateRandomQuestions(source, hard, easy, 3);
     String input = "1";
     ByteArrayInputStream inputStream = new ByteArrayInputStream(input.getBytes());
@@ -147,7 +147,7 @@ public class StudySessionModelTest {
    * @throws IOException when there's issue generating the question
    */
   @Test
-  public void testUserChoices2AlreadyHard() throws IOException {
+  void testUserChoices2AlreadyHard() throws IOException {
     ssm.generateRandomQuestions(source, hard, easy, 3);
     String input = "2";
     ByteArrayInputStream inputStream = new ByteArrayInputStream(input.getBytes());
@@ -175,7 +175,7 @@ public class StudySessionModelTest {
    * @throws IOException when there's issue generating the question
    */
   @Test
-  public void testUserChoices2() throws IOException {
+  void testUserChoices2() throws IOException {
     ssm.generateRandomQuestions(source, hard, easy, 3);
     String input = "2";
     ByteArrayInputStream inputStream = new ByteArrayInputStream(input.getBytes());
@@ -201,7 +201,7 @@ public class StudySessionModelTest {
    * @throws IOException when there's issue generating the question
    */
   @Test
-  public void testUserChoices3() throws IOException {
+  void testUserChoices3() throws IOException {
     ssm.generateRandomQuestions(source, hard, easy, 3);
     String input = "3\n1";
     ByteArrayInputStream inputStream = new ByteArrayInputStream(input.getBytes());
@@ -227,7 +227,7 @@ public class StudySessionModelTest {
    * Test to see if an exception is thrown when the user enters an invalid choice
    */
   @Test
-  public void testInvalidChoice() {
+  void testInvalidChoice() {
     ssm.generateRandomQuestions(source, hard, easy, 3);
     String input = "5";
     ByteArrayInputStream inputStream = new ByteArrayInputStream(input.getBytes());
@@ -249,7 +249,7 @@ public class StudySessionModelTest {
    * @throws IOException when there's issue generating the question
    */
   @Test
-  public void testEndSession() throws IOException {
+  void testEndSession() throws IOException {
     ssm.generateRandomQuestions(source, hard, easy, 1);
     String input = "1";
     ByteArrayInputStream inputStream = new ByteArrayInputStream(input.getBytes());
@@ -282,7 +282,7 @@ public class StudySessionModelTest {
    * @throws IOException when there's issue generating the question
    */
   @Test
-  public void testUpdateQuestions() throws IOException {
+  void testUpdateQuestions() throws IOException {
     Files.deleteIfExists(source);
     ssm.generateRandomQuestions(source, hard, easy, 1);
     String input = "2";

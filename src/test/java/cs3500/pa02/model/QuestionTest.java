@@ -10,7 +10,7 @@ import org.junit.jupiter.api.Test;
  */
 class QuestionTest {
   //the question
-  Question q1;
+  private Question q1;
 
   /**
    * Initialize the question

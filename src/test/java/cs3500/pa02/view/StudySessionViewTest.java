@@ -28,7 +28,7 @@ public class StudySessionViewTest {
    * Set the output
    */
   @BeforeEach
-  public void setUpOutput() {
+  void setUpOutput() {
     testOut = new ByteArrayOutputStream();
     System.setOut(new PrintStream(testOut));
   }
@@ -44,7 +44,7 @@ public class StudySessionViewTest {
    * Restore the input and output to system default
    */
   @AfterEach
-  public void restoreSystemInputOutput() {
+  void restoreSystemInputOutput() {
     System.setIn(systemIn);
     System.setOut(systemOut);
   }
@@ -53,7 +53,7 @@ public class StudySessionViewTest {
    * Initializes the ssv
    */
   @BeforeEach
-  public void setUp() {
+  void setUp() {
     ssv = new StudySessionView();
   }
 
@@ -61,7 +61,7 @@ public class StudySessionViewTest {
    * Test if the source is retrieved correctly from the user's input
    */
   @Test
-  public void testGetSource() {
+  void testGetSource() {
     String prompt = "Enter the source to the question bank: ";
     Path expectedSource = Path.of("/Users/sherrychen/Downloads/CS3500/pa02-shuerry"
         + "/src/test/resources/output/StudyGuide.txt");
@@ -80,7 +80,7 @@ public class StudySessionViewTest {
    * Test if the number of questions is retrieved correctly from the user's input
    */
   @Test
-  public void testGetNumOfQuestion() {
+  void testGetNumOfQuestion() {
     String prompt = "Enter the number of questions: ";
     int expectedNumOfQuestions = 5;
     String input = "5"; // Simulating user input
@@ -97,7 +97,7 @@ public class StudySessionViewTest {
    * Test if the line is being shown correctly to the user
    */
   @Test
-  public void testShowLine() {
+  void testShowLine() {
     String prompt = "This is a test prompt.";
     ssv.showLine(prompt);
 
