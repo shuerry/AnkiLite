@@ -35,8 +35,7 @@ class StudySessionControllerTest {
    */
   @Test
   public void testGetStart() throws IOException {
-    String input = "/Users/sherrychen/Downloads/CS3500/pa02-shuerry/src/test/"
-        + "resources/output/TestingUpdate.txt"
+    String input = "src/test/resources/output/TestingUpdate.txt"
         + "\n1\n1";
     ByteArrayInputStream inputStream = new ByteArrayInputStream(input.getBytes());
     standardIn = System.in;

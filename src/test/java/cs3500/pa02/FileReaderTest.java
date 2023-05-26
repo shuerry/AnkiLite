@@ -52,8 +52,7 @@ class FileReaderTest {
     FileReader fr = new FileReader(Path.of("src/test/resources/input/Q&A.md"));
     ArrayList<String> expected =
         (ArrayList<String>) Files.readAllLines(
-            Path.of("/Users/sherrychen/Downloads/CS3500/pa02-shuerry"
-                + "/src/test/resources/SampleForTesting.txt"));
+            Path.of( "src/test/resources/SampleForTesting.txt"));
     StringBuilder expectedContent = new StringBuilder();
     for (String s : expected) {
       expectedContent.append(s + "\n");

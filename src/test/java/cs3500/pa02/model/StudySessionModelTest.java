@@ -43,8 +43,7 @@ public class StudySessionModelTest {
   @BeforeEach
   public void setUp() {
     ssm = new StudySessionModel();
-    source = Path.of("/Users/sherrychen/Downloads/CS3500/pa02-shuerry"
-        + "/src/test/resources/output/TestingUpdate.txt");
+    source = Path.of("src/test/resources/output/TestingUpdate.txt");
     hard1 = new Question("A hard question",
         "An answer", Difficulty.HARD);
     hard2 = new Question("Another hard question",

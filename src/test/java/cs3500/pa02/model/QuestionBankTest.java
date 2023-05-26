@@ -15,8 +15,7 @@ import org.junit.jupiter.api.Test;
  * A test class for QuestionBank
  */
 class QuestionBankTest {
-  private final String input = "/Users/sherrychen/Downloads/CS3500/pa02-shuerry"
-      + "/src/test/resources/SampleForTesting.txt";
+  private final String input = "src/test/resources/SampleForTesting.txt";
   QuestionBank qb;
 
   /**
