@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
- * Represents a QuestionBank that has all the Q&A blocks for a review session
+ * Represents a QuestionBank that has all the QA blocks for a review session
  */
 public class QuestionBank {
   // An ArrayList that stores all the questions
@@ -22,6 +22,7 @@ public class QuestionBank {
    * Constructor for QuestionBank class that initializes the scanner
    *
    * @param source path to the question bank file
+   * @throws IOException when scanner cannot be initialized
    */
   public QuestionBank(Path source) throws IOException {
     try {

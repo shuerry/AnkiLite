@@ -8,7 +8,7 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 
 /**
- * Represents a Question writer that generates a file with all the Q&A blocks
+ * Represents a Question writer that generates a file with all the QA blocks
  */
 public class QuestionWriter {
   /**
@@ -50,7 +50,7 @@ public class QuestionWriter {
   }
 
   /**
-   * generate a question bank with all the extracted Q&A blocks
+   * generate a question bank with all the extracted QA blocks
    *
    * @param output the output path of where the question bank wants to be written
    * @return the question bank

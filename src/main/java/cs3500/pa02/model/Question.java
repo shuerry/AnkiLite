@@ -1,7 +1,7 @@
 package cs3500.pa02.model;
 
 /**
- * A Question class that represents a Q&A block
+ * A Question class that represents a QA block
  */
 public class Question {
   // A question
@@ -14,9 +14,9 @@ public class Question {
   /**
    * Constructor for the Question Class, initializes question, answer, and difficulty
    *
-   * @param question the question of the Q&A block
-   * @param answer the answer of the Q&A block
-   * @param difficulty the difficulty of the Q&A block
+   * @param question the question of the QA block
+   * @param answer the answer of the QA block
+   * @param difficulty the difficulty of the QA block
    */
   public Question(String question, String answer, Difficulty difficulty) {
     this.question = question;
@@ -53,6 +53,8 @@ public class Question {
 
   /**
    * Set the difficulty of the block
+   *
+   * @param difficulty the difficulty that the question is changing into
    */
   public void setDifficulty(Difficulty difficulty) {
     this.difficulty = difficulty;

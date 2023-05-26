@@ -14,6 +14,7 @@ public class StudySessionView {
    *
    * @param prompt the prompt being displayed to the user
    * @param scanner for reading the user's input
+   * @return the source that the user entered
    */
   public static Path getSource(String prompt, Scanner scanner) {
     System.out.println(prompt);
@@ -26,6 +27,7 @@ public class StudySessionView {
    *
    * @param prompt the prompt being displayed to the user
    * @param scanner for reading the user's input
+   * @return number of questions that the user entered
    */
   public static int getNumOfQuestion(String prompt, Scanner scanner) {
     System.out.println(prompt);
@@ -47,6 +49,7 @@ public class StudySessionView {
    *
    * @param prompt the prompt being displayed to the user
    * @param scanner for reading the user's input
+   * @return choice that the user entered
    */
   public static int getChoice(String prompt, Scanner scanner) {
     System.out.println(prompt);
@@ -55,7 +58,7 @@ public class StudySessionView {
   }
 
   /**
-   * Show the question of the Q&A block
+   * Show the question of the QA block
    *
    * @param question the question that the user wants the answer to be shown
    */

@@ -51,7 +51,7 @@ public class FileReader {
   }
 
   /**
-   * summarize the content in the markdown file with appropriate formatting and remove any Q&A
+   * summarize the content in the markdown file with appropriate formatting and remove any QA
    *
    * @return the summarized and formatted content of the markdown file
    */
