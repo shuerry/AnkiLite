@@ -54,7 +54,7 @@ public class Driver {
       SgWriter fw = new SgWriter(mdList.getList());
       fw.writeSg(output, orderingFlag);
 
-      // write the Q&A blocks in all the markdown files to the designated output
+      // write the Q&A blocks from all the markdown files to the designated output
       QuestionWriter qw = new QuestionWriter(mdList.getList());
       String questionBank = output.substring(0, output.length() - 2) + "txt";
       qw.writeQuestionBank(questionBank);

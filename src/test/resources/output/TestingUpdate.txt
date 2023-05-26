@@ -1,0 +1,3 @@
+HARD- Q: A hard question A: An answer
+HARD- Q: Another hard question A: An answer
+HARD- Q: An easy question A: An answer
